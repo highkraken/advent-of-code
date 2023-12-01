@@ -1,6 +1,7 @@
 package day1
 
 import java.io.File
+import aocutils.*
 
 const val inputFile = "Kotlin/src/main/kotlin/day1/input.txt"
 const val demoInputFile = "Kotlin/src/main/kotlin/day1/demo_input2.txt"
