@@ -70,7 +70,7 @@ fun solve(input: List<Int>): Int =
 fun main()  {
     actual = true
     val inputP1 = readFileInput1()
-    println("Part 1: ${solve(inputP1)}") // 54081
+    solve(inputP1).println(1) // 54081
     val inputP2 = readFileInputP2()
-    println("Part 2: ${solve(inputP2)}") // 54649
+    solve(inputP2).println(2) // 54649
 }
