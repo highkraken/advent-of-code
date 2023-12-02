@@ -6,6 +6,8 @@ import aocutils.*
 const val inputFile = "Kotlin/src/main/kotlin/day1/input.txt"
 const val demoInputFile = "Kotlin/src/main/kotlin/day1/demo_input2.txt"
 var actual = false
+const val part1 = "Part 1:"
+const val part2 = "Part 2:"
 
 
 fun readFileInput1(): List<Int> {
@@ -71,7 +73,7 @@ fun solve(input: List<Int>): Int =
 fun main()  {
     actual = true
     val inputP1 = readFileInput1()
-    solve(inputP1).println(1) // 54081
+    solve(inputP1).println(part1) // 54081
     val inputP2 = readFileInputP2()
-    solve(inputP2).println(2) // 54649
+    solve(inputP2).println(part2) // 54649
 }
