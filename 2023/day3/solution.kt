@@ -45,8 +45,8 @@ fun solvePart1(engineSchematic: List<String>): Int  {
     val engineParts = mutableListOf<Int>()
     val symbolIndices = getSymbolIndices(engineSchematic)
     val directions = listOf(
-        Point(x = 1, y = 0), // left
-        Point(x = -1, y = 0),// right
+        Point(x = 1, y = 0), // right
+        Point(x = -1, y = 0),// left
         Point(x = 0, y = 1), // down
         Point(x = 1, y = 1), // down-right
         Point(x = -1, y = 1),// down-left
@@ -71,8 +71,8 @@ fun solvePart2(engineSchematic: List<String>): Int   {
     var ans = 0
     val gearSymbols = getSymbolIndices(input = engineSchematic, onlyAsterisks = true)
     val directions = listOf(
-        Point(x = 1, y = 0), // left
-        Point(x = -1, y = 0),// right
+        Point(x = 1, y = 0), // rgiht
+        Point(x = -1, y = 0),// left
         Point(x = 0, y = 1), // down
         Point(x = 1, y = 1), // down-right
         Point(x = -1, y = 1),// down-left
