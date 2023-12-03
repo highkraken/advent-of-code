@@ -7,8 +7,8 @@ import kotlin.math.max
 const val inputFile = "Kotlin/src/main/kotlin/day2/input.txt"
 const val demoInputFile = "Kotlin/src/main/kotlin/day2/demo_input.txt"
 var actual = false
-const val part1 = "Part 1:"
-const val part2 = "Part 2:"
+const val part1 = "Part 1: "
+const val part2 = "Part 2: "
 val LIMIT = Cube(red = 12, green = 13, blue = 14)
 
 data class Game(val id: Int, val cubes: List<Cube>)
