@@ -21,7 +21,7 @@ private operator fun Cube.compareTo(that: Cube): Int {
     return 0
 }
 
-fun readFileInput(): List<Game> {
+fun readAndParseInput(): List<Game> {
     val file = File(if (actual) inputFile else demoInputFile)
     val input = mutableListOf<Game>()
     file.forEachLine { line ->
@@ -73,7 +73,7 @@ fun solvePart2(input: List<Game>): Int  {
 
 fun main()  {
     actual = true
-    val input = readFileInput()
+    val input = readAndParseInput()
     solvePart1(input).println(part1) // 2348
     solvePart2(input).println(part2) // 76008
 }

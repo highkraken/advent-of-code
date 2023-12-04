@@ -10,7 +10,7 @@ const val part1 = "Part 1: "
 const val part2 = "Part 2: "
 
 
-fun readFileInput1(): List<Int> {
+fun readAndParseInput(): List<Int> {
     val file = File(if (actual) inputFile else demoInputFile)
     val input = mutableListOf<Int>()
     file.forEachLine { line ->
@@ -72,7 +72,7 @@ fun solve(input: List<Int>): Int =
 
 fun main()  {
     actual = true
-    val inputP1 = readFileInput1()
+    val inputP1 = readAndParseInput()
     solve(inputP1).println(part1) // 54081
     val inputP2 = readFileInputP2()
     solve(inputP2).println(part2) // 54649

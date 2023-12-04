@@ -8,8 +8,18 @@ const val demoInputFile = "Kotlin/src/main/kotlin/day3/demo_input.txt"
 var actual = false
 const val part1 = "Part 1: "
 const val part2 = "Part 2: "
+val directions = listOf(
+    Point(x = 1, y = 0), // right
+    Point(x = -1, y = 0),// left
+    Point(x = 0, y = 1), // down
+    Point(x = 1, y = 1), // down-right
+    Point(x = -1, y = 1),// down-left
+    Point(x = 0, y = -1),// up
+    Point(x = 1, y = -1),// up-right
+    Point(x = -1, y = -1)// up-left
+)
 
-fun readFileInput(): List<String>  =
+fun readAndParseInput(): List<String>  =
     File(if (actual) inputFile else demoInputFile).readLines()
 
 fun getSymbolIndices(input: List<String>, onlyAsterisks: Boolean=false): List<aocutils.Point>    {
@@ -44,16 +54,6 @@ fun extractEnginePart(schematicLine: String, fromIndex: Int): Int   {
 fun solvePart1(engineSchematic: List<String>): Int  {
     val engineParts = mutableListOf<Int>()
     val symbolIndices = getSymbolIndices(engineSchematic)
-    val directions = listOf(
-        Point(x = 1, y = 0), // right
-        Point(x = -1, y = 0),// left
-        Point(x = 0, y = 1), // down
-        Point(x = 1, y = 1), // down-right
-        Point(x = -1, y = 1),// down-left
-        Point(x = 0, y = -1),// up
-        Point(x = 1, y = -1),// up-right
-        Point(x = -1, y = -1)// up-left
-    )
     symbolIndices.forEach { (x, y) ->
         directions.forEach { (dx, dy) ->
             val (newX, newY) = x + dx to y + dy
@@ -70,16 +70,6 @@ fun solvePart1(engineSchematic: List<String>): Int  {
 fun solvePart2(engineSchematic: List<String>): Int   {
     var ans = 0
     val gearSymbols = getSymbolIndices(input = engineSchematic, onlyAsterisks = true)
-    val directions = listOf(
-        Point(x = 1, y = 0), // rgiht
-        Point(x = -1, y = 0),// left
-        Point(x = 0, y = 1), // down
-        Point(x = 1, y = 1), // down-right
-        Point(x = -1, y = 1),// down-left
-        Point(x = 0, y = -1),// up
-        Point(x = 1, y = -1),// up-right
-        Point(x = -1, y = -1)// up-left
-    )
     gearSymbols.forEach { (x, y) ->
         val engineParts = mutableListOf<Int>()
         directions.forEach { (dx, dy) ->
@@ -97,7 +87,7 @@ fun solvePart2(engineSchematic: List<String>): Int   {
 
 fun main()  {
     actual = true
-    val input = readFileInput()
+    val input = readAndParseInput()
     solvePart1(input).println(part1) // 551094
     solvePart2(input).println(part2) // 80179647
 }
