@@ -19,7 +19,7 @@ fun readAndParseInput(): List<Card> {
     file.forEachLine { line ->
         val (_, numbers) = line.split(": ")
         val (cardNumbers, winningNumbers) = numbers.split(" | ").map { it.extractAllIntegers() }
-        input.add(Card(cardNumbers = cardNumbers, winningNumbers = winningNumbers))
+        input.add(Card(cardNumbers = cardNumbers.map { it.toInt() }, winningNumbers = winningNumbers.map { it.toInt() }))
     }
     return input.toList()
 }
