@@ -4,8 +4,8 @@ import aocutils.println
 import java.io.File
 import kotlin.math.max
 
-const val inputFile = "Kotlin/src/main/kotlin/day2/input.txt"
-const val demoInputFile = "Kotlin/src/main/kotlin/day2/demo_input.txt"
+const val inputFile = "Kotlin/src/main/kotlin/day02/input.txt"
+const val demoInputFile = "Kotlin/src/main/kotlin/day02/demo_input.txt"
 var actual = false
 const val part1 = "Part 1: "
 const val part2 = "Part 2: "

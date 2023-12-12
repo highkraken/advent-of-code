@@ -4,8 +4,8 @@ import aocutils.extractAllIntegers
 import aocutils.println
 import java.io.File
 
-const val inputFile = "Kotlin/src/main/kotlin/day6/input.txt"
-const val demoInputFile = "Kotlin/src/main/kotlin/day6/demo_input.txt"
+const val inputFile = "Kotlin/src/main/kotlin/day06/input.txt"
+const val demoInputFile = "Kotlin/src/main/kotlin/day06/demo_input.txt"
 var actual = false
 const val part1 = "Part 1: "
 const val part2 = "Part 2: "

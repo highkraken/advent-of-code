@@ -3,8 +3,8 @@ package day03
 import java.io.File
 import aocutils.*
 
-const val inputFile = "Kotlin/src/main/kotlin/day3/input.txt"
-const val demoInputFile = "Kotlin/src/main/kotlin/day3/demo_input.txt"
+const val inputFile = "Kotlin/src/main/kotlin/day03/input.txt"
+const val demoInputFile = "Kotlin/src/main/kotlin/day03/demo_input.txt"
 var actual = false
 const val part1 = "Part 1: "
 const val part2 = "Part 2: "
