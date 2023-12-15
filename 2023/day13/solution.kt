@@ -81,7 +81,7 @@ fun solvePart2(input: List<String>): Long   {
     return ans
 }
 
-fun main()  {
+fun main()  { // Thanks to HyperNeutrino https://youtu.be/GYbjIvTQ_HA?si=zvE6Kd-UrCvliVv4
     actual = true
     val input = readAndParseInput()
     solvePart1(input).println(part1)

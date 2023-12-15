@@ -9,8 +9,8 @@ const val demoInputFile = "Kotlin/src/main/kotlin/day08/demo_input2.txt"
 var actual = false
 const val part1 = "Part 1: "
 const val part2 = "Part 2: "
-val startersA = mutableListOf<Int>()
-val startersZ = mutableListOf<Int>()
+private val startersA = mutableListOf<Int>()
+private val startersZ = mutableListOf<Int>()
 
 data class Node(val nodeId: Int, val left: Int, val right: Int)
 

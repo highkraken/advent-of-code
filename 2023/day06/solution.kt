@@ -27,21 +27,17 @@ fun findNumberOfWays(time: Long, distance: Long): Long {
     return count
 }
 
-fun solvePart1(time: List<Int>, distance: List<Int>): Int   {
-    var ans = 1L
-    for (index in time.indices) {
-        val currTime = time[index]
-        val currDistance = distance[index]
-        ans *= findNumberOfWays(time = currTime.toLong(), distance = currDistance.toLong())
+fun solvePart1(time: List<Int>, distance: List<Int>): Int =
+    time.zip(distance).fold(1) { acc, (time, distance) ->
+        acc * findNumberOfWays(time = time.toLong(), distance = distance.toLong()).toInt()
     }
-    return ans.toInt()
-}
 
-fun solvePart2(time: List<Int>, distance: List<Int>): Long  {
-    val theTime = time.joinToString(separator = "")
-    val theDistance = distance.joinToString(separator = "")
-    return findNumberOfWays(time = theTime.toLong(), distance = theDistance.toLong())
-}
+
+fun solvePart2(time: List<Int>, distance: List<Int>): Long =
+    findNumberOfWays(
+        time = time.joinToString(separator = "").toLong(),
+        distance = distance.joinToString(separator = "").toLong()
+    )
 
 fun main()  {
     actual = true

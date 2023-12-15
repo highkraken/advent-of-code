@@ -42,7 +42,7 @@ fun solvePart1(platform: List<String>): Long    {
     return load
 }
 
-fun solvePart2(platform: List<String>): Long    {
+fun solvePart2(platform: List<String>): Long    { // Thanks to HyperNeutrino https://youtu.be/WCVOBKUNc38?si=WcyBHa7-iEMg6wMI
     var tiltedPlatform = platform
     val set = mutableSetOf(tiltedPlatform)
     val list = mutableListOf(tiltedPlatform)

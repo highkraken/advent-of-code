@@ -101,7 +101,7 @@ fun solvePart1(field: List<String>): Long   {
     return steps
 }
 
-fun solvePart2(field: List<String>): Long   {
+fun solvePart2(field: List<String>): Long   { // Thanks to HyperNeutrino https://youtu.be/r3i3XE9H4uw?si=xL5SRFWy86BNJIv7
     val groupedByY = pipes
         .sortedWith(compareBy({ it.y }, { it.x }))
         .groupBy({ it.y }, { it.x })
