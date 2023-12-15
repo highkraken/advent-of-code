@@ -56,17 +56,15 @@ fun solvePart1(almanac: Almanac): Long  {
     return locationNumbers.minOf { it }
 }
 
-fun solvePart2(almanac: Almanac): Long  {
-    val seeds = almanac.seeds.chunked(2).map { listOf(it[0], it[1] + it[0]) }.toMutableList()
-    val ans = mutableListOf<List<Long>>()
-    while (seeds.size > 0)  {
-        val (start, end) = seeds.removeLast()
-        almanac.maps.forEach { map ->
+fun solvePart2(almanac: Almanac): Long  { // Thanks to HyperNeutrino https://youtu.be/NmxHw_bHhGM?si=z6W11FSj6dMev7EP
+    var seeds = almanac.seeds.chunked(2).map { listOf(it[0], it[1] + it[0]) }.toMutableList()
+    for (map in almanac.maps)   {
+        val ans = mutableListOf<List<Long>>()
+         xd@ while (seeds.size > 0) {
+            val (start, end) = seeds.removeLast()
             for ((desStart, srcStart, range) in map.chunked(3)) {
-                print("$desStart $srcStart $range --> ")
                 val rStart = maxOf(start, srcStart)
                 val rEnd = minOf(end, srcStart + range)
-                println("$rStart - $rEnd -> $start - $end")
                 if (rStart < rEnd) {
                     ans.add(listOf(rStart + desStart - srcStart, rEnd + desStart - srcStart))
                     if (rStart > start) {
@@ -75,19 +73,19 @@ fun solvePart2(almanac: Almanac): Long  {
                     if (end > rEnd) {
                         seeds.add(listOf(rEnd, end))
                     }
-                    return@forEach
+                    continue@xd
                 }
             }
+            ans.add(listOf(start, end))
         }
-        ans.add(listOf(start, end))
+        seeds = ans
     }
-    println(ans.sortedBy { it[0] })
-    return ans.minOf { it[0] }
+    return seeds.minOf { it[0] }
 }
 
 fun main()  {
-    actual = false
+    actual = true
     val almanac = readAndParseInput()
     solvePart1(almanac).println(part1) // 214922730
-    solvePart2(almanac).println(part2)
+    solvePart2(almanac).println(part2) // 148041808
 }
