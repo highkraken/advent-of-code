@@ -66,7 +66,6 @@ private fun solvePart2(digPlan: List<Move>): Long   {
     for ((_, _, color) in digPlan)   {
         val amount = color.substring(0, color.lastIndex).toDecimal()
         val direction = map[color.last()]!!
-        println("$color -> $direction $amount")
         newDigPlan.add(Move(direction = direction, amount = amount))
     }
     return solvePart1(digPlan = newDigPlan)
