@@ -37,5 +37,5 @@ private fun main() {
     actual = true
     val input = readAndParseInput()
     solveP1(input).println(PART1) // 1970720
-    solveP2(input).println(PART2) // 17191599
+    solveP2(input).println(PART2)
 }
