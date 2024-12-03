@@ -3,8 +3,9 @@ package day
 import java.io.File
 import aocutils.*
 
-private const val INPUT = "day/input.txt"
-private const val DEMO_INPUT = "day/demo_input.txt"
+private val DAY = (object {}).javaClass.packageName
+private val INPUT = "$DAY/input.txt"
+private val DEMO_INPUT = "$DAY/demo_input.txt"
 private var actual = false
 private const val PART1 = "Part 1: "
 private const val PART2 = "Part 2: "
